@@ -29,7 +29,7 @@ jobs:
       - name: Install and check
         uses: greenbone/actions/lint-python@v3
         with:
-          packages: pypsrp-cli[dev]
+          packages: pypsrp_cli.py
           linter: ruff check
           python-version: ${{ matrix.python-version }}
 

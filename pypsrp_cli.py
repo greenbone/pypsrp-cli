@@ -118,7 +118,7 @@ def execute_command(args, client):
 
 
 def log_error(error_kind: str):
-    """ Prefixes the error with the base ERROR IN LIBRARY log message """
+    """Prefixes the error with the base ERROR IN LIBRARY log message"""
     logger.info("ERROR IN LIBRARY")
     logger.info(error_kind)
 
