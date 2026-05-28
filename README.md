@@ -72,7 +72,7 @@ This project is maintained by [Greenbone AG][Greenbone]
 
 ## License
 
-Copyright (C) 2024 [Greenbone AG][Greenbone]
+Copyright (C) 2026 [Greenbone AG][Greenbone]
 
 Licensed under the [GNU General Public License v3.0 or later](LICENSE).
 
