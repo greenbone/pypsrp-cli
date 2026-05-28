@@ -66,12 +66,6 @@ options:
 
 Ensure that your target has WinRM enabled. Non-Server versions of Windows have it disabled by default.
 
-
-## Version History
-
-* 0.1
-    * Initial Release
-
 ## Maintainer
 
 This project is maintained by [Greenbone AG][Greenbone]
