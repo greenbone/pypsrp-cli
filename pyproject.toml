@@ -71,3 +71,24 @@ exclude = '''
 
 [tool.isort]
 profile = "black"
+
+[tool.poetry]
+name = "pypsrp-cli"
+version = "0.1.0"
+description = "Pypsrp CLI"
+authors = ["Greenbone AG <info@greenbone.net>"]
+
+[tool.poetry.dependencies]
+python = "<4.0,>=3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.11.0"
+autohooks = "^26.2.0"
+autohooks-plugin-black = "^23.10.0"
+pontos = "^25.8.1"
+coverage = "^7.13"
+pyfakefs = "^6.2.0"
+gitpython = "^3.1.46"
+ruff = "^0.15.10"
+autohooks-plugin-ruff = "^25.3.1"
