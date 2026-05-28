@@ -1,3 +1,5 @@
+![Greenbone Logo](https://www.greenbone.net/wp-content/uploads/gb_new-logo_horizontal_rgb_small.png)
+
 # Pypsrp CLI
 
 This is a simple CLI for [pypsrp](https://github.com/jborean93/pypsrp).
@@ -8,9 +10,10 @@ Pypsrp exposes the [WinRM (Windows Remote Management)](https://learn.microsoft.c
 
 ## Installing
 
-### Dependencies
+### Requirements Dependencies
 
 * Inherited from Pypsrp
+* Python 3.10 and later are supported
 * Forces Kerberos support in its dependency chain
 
 #### Packages
@@ -69,9 +72,21 @@ Ensure that your target has WinRM enabled. Non-Server versions of Windows have i
 * 0.1
     * Initial Release
 
+## Maintainer
+
+This project is maintained by [Greenbone AG][Greenbone]
+
 ## License
 
-This project is licensed under the GLPv3 License - see the LICENSE.md file for details
+Copyright (C) 2024 [Greenbone AG][Greenbone]
+
+Licensed under the [GNU General Public License v3.0 or later](LICENSE).
+
+[Greenbone]: https://www.greenbone.net/
+[poetry]: https://python-poetry.org/
+[pip]: https://pip.pypa.io/
+[pipx]: https://pypa.github.io/pipx/
+[autohooks]: https://github.com/greenbone/autohooks
 
 ## Acknowledgments
 
