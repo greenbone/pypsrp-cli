@@ -14,7 +14,7 @@ name = "pypsrp-cli"
 version = "0.1"
 description = "CLI for Pypsrp"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = "<4.0,>=3.10"
 license = "GPL-3.0-only"
 license-files = ["LICENSE"]
 authors = [
@@ -44,7 +44,7 @@ homepage = "https://github.com/greenbone/pypsrp-cli"
 [project.optional-dependencies]
 dev = [
     "pypsrp[dev] >= 0.9.0",
-    "black >= 26.3",
+    "black >= 25.11.0",
     "autohooks >= 26.2.0",
     "autohooks-plugin-black >= 23.10.0",
     "coverage >= 7.13",
