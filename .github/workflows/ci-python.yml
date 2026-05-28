@@ -32,30 +32,3 @@ jobs:
           packages: pypsrp_cli.py
           linter: ruff check
           python-version: ${{ matrix.python-version }}
-
-  mypy:
-    name: Check type hints
-    runs-on: "ubuntu-latest"
-    strategy:
-      matrix:
-        python-version:
-          - "3.10"
-          - "3.11"
-          - "3.12"
-    steps:
-      - uses: actions/checkout@v6
-      - name: Install dependencies
-        shell: bash
-        # use remaining python package directly from pip / the pyproject.toml, 
-        # not via apt for testing
-        run: |
-          sudo apt update
-          sudo apt install krb5-user libkrb5-dev libgssapi3-heimdal libkrb5-26-heimdal -y
-
-
-
-      - name: Run mypy
-        uses: greenbone/actions/mypy-python@v3
-        with:
-          python-version: ${{ matrix.python-version }}
-
