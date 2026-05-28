@@ -23,7 +23,6 @@ jobs:
         # use remaining python package directly from pip / the pyproject.toml, 
         # not via apt for testing
         run: |
-          root_path='/var/lib/runner-cache'
           sudo apt update
           sudo apt install krb5-user libkrb5-dev libgssapi3-heimdal libkrb5-26-heimdal -y
 
