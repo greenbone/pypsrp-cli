@@ -18,6 +18,15 @@ jobs:
           - "3.12"
     steps:
       - uses: actions/checkout@v6
+      - name: Install dependencies
+        shell: bash
+        # use remaining python package directly from pip / the pyproject.toml, 
+        # not via apt for testing
+        run: |
+          root_path='/var/lib/runner-cache'
+          sudo apt update
+          sudo apt install krb5-user libkrb5-dev libgssapi3-heimdal libkrb5-26-heimdal -y
+
       - name: Install and check
         uses: greenbone/actions/lint-python@v3
         with:
