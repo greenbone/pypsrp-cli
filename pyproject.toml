@@ -83,7 +83,7 @@ python = "<4.0,>=3.10"
 
 
 [tool.poetry.group.dev.dependencies]
-black = "^25.11.0"
+black = ">=25.11,<27.0"
 autohooks = "^26.2.0"
 autohooks-plugin-black = "^23.10.0"
 pontos = "^25.8.1"
