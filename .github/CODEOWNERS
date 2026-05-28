@@ -1,0 +1,5 @@
+# default reviewers
+*                        @greenbone/vulnerability-test-spec-ops
+
+# exceptions
+/.github/                @greenbone/devops @vulnerability-test-spec-ops

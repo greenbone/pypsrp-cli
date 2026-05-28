@@ -1,0 +1,43 @@
+name: Build and test Python package
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  linting:
+    name: Linting
+    runs-on: "ubuntu-latest"
+    strategy:
+      matrix:
+        python-version:
+          - "3.10"
+          - "3.11"
+          - "3.12"
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install and check
+        uses: greenbone/actions/lint-python@v3
+        with:
+          packages: pypsrp-cli
+          linter: ruff check
+          python-version: ${{ matrix.python-version }}
+
+  mypy:
+    name: Check type hints
+    runs-on: "ubuntu-latest"
+    strategy:
+      matrix:
+        python-version:
+          - "3.10"
+          - "3.11"
+          - "3.12"
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run mypy
+        uses: greenbone/actions/mypy-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+

@@ -1,0 +1,22 @@
+name: Release Python package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write  # Required to create releases
+
+# don't run two release processes at the same time
+# but also don't cancel already running workflow because it might already be to late
+concurrency:
+  group: ${{ github.workflow }}
+
+jobs:
+  build-and-release:
+    name: Create a new release
+    uses: greenbone/workflows/.github/workflows/release-python.yml@main
+    with:
+      release-version: ${{ inputs.release-version }}
+      release-type: ${{ inputs.release-type }}
