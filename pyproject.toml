@@ -42,8 +42,8 @@ homepage = "https://github.com/greenbone/pypsrp-cli"
 
 [project.optional-dependencies]
 dev = [
-    "pypsrp[dev] >= 0.9.0",
-    "black >= 25.11.0",
+    # nb: can no-longer use pypsrp[dev] due to black conflict
+    "black >= 26.3.1",    
     "autohooks >= 26.2.0",
     "autohooks-plugin-black >= 23.10.0",
     "coverage >= 7.13",
@@ -82,10 +82,9 @@ python = "<4.0,>=3.10"
 
 
 [tool.poetry.group.dev.dependencies]
-black = "^25.11.0"
+black = "^26.3.1"
 autohooks = "^26.2.0"
 autohooks-plugin-black = "^23.10.0"
-pontos = "^25.8.1"
 coverage = "^7.13"
 ruff = "^0.15.10"
 autohooks-plugin-ruff = "^25.3.1"
