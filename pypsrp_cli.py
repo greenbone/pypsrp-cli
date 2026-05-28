@@ -77,6 +77,7 @@ def execute_command(args, client):
             logger.info("ERROR IN LIBRARY / INTERPRETER / COMMAND")
             logger.info("UNKNOWN")
             logger.info(str(stdout) + "\n" + str(stderr))
+            exit(1)
         else:
             print(stdout)
 
@@ -107,6 +108,7 @@ def execute_command(args, client):
                     msg += "Unknown cause."
 
             logger.info(msg)
+            exit(1)
         else:
             print(output)
 
