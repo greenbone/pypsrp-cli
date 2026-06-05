@@ -36,7 +36,8 @@ class SensitiveFormatter(logging.Formatter):
 
 
 logger = logging.getLogger("WinRM")
-handler = logging.StreamHandler(sys.stdout)  # default is stderr
+# always log to  stdout instead to reduce complexity on scanner-side
+handler = logging.StreamHandler(sys.stdout)
 formatter = SensitiveFormatter()
 handler.setFormatter(formatter)
 handler.terminator = "\n-------\n"
