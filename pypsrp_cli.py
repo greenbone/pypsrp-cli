@@ -65,6 +65,10 @@ def prepare_parser():
     )
     parser.add_argument("-u", "--username", help="Username")
     parser.add_argument("-p", "--password", help="Password")
+    parser.add_argument(
+        "--realm",
+        help="Kerberos Realm for thes user. Necessary if Kerberos config (KRB5_CONFIG or /etc/krb5.conf) does not specify a default realm.",
+    )
     return parser
 
 
@@ -186,8 +190,14 @@ def main():
 
     formatter.sensitive_information = [args.username, args.password]
 
+    if args.authentication == "Kerberos" and args.realm:
+        # Realm is not considered sensitive
+        username = f"{args.username}@{args.realm}"
+    else:
+        username = args.username
+
     kwargs = {
-        "username": args.username,
+        "username": username,
         "password": args.password,
         # basic, certificate, credssp, kerberos, negotiate, ntlm
         "auth": args.authentication.lower(),
