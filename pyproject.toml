@@ -11,7 +11,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pypsrp-cli"
-version = "0.1"
+version = "0.1.1"
 description = "CLI for Pypsrp"
 readme = "README.md"
 requires-python = "<4.0,>=3.10"
@@ -73,7 +73,7 @@ profile = "black"
 
 [tool.poetry]
 name = "pypsrp-cli"
-version = "0.1.0"
+version = "0.1.1"
 description = "Pypsrp CLI"
 authors = ["Greenbone AG <info@greenbone.net>"]
 
