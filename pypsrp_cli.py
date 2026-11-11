@@ -1,18 +1,17 @@
+#!/usr/bin/env python3
 # SPDX-FileCopyrightText: 2026 Greenbone AG
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-#!/usr/bin/env python3
-
 import argparse
-import requests
 import json
-import krb5
-import pypsrp
-import sys
 import logging
 import re
+import sys
 
+import krb5
+import pypsrp
+import requests
 from pypsrp.client import Client
 
 
@@ -86,7 +85,7 @@ def execute_command(args, client):
             logger.info("ERROR IN LIBRARY / INTERPRETER / COMMAND")
             logger.info("UNKNOWN")
             logger.info(str(stdout) + "\n" + str(stderr))
-            exit(1)
+            sys.exit(1)
         else:
             print(stdout)
 
@@ -117,7 +116,7 @@ def execute_command(args, client):
                     msg += "Unknown cause."
 
             logger.info(msg)
-            exit(1)
+            sys.exit(1)
         else:
             print(output)
 
@@ -160,7 +159,7 @@ def main():
     """
     parser = prepare_parser()
     # ensures to not fail if CLI version < feed version w.r.t. pypsrp features used
-    args, unrecognised_args = parser.parse_known_args()
+    args, _unrecognised_args = parser.parse_known_args()
 
     # Minimal check for all mandatory argumnents existence
     if not (
@@ -176,7 +175,7 @@ def main():
         logger.info("ERROR IN LIBRARY / CALLEE")
         logger.info("BAD ARGUMENTS")
         logger.info("Insufficient inputs provided.")
-        exit(1)
+        sys.exit(1)
 
     if not (
         args.ssl in ("0", "1")
@@ -186,7 +185,7 @@ def main():
         logger.info("ERROR IN LIBRARY / CALLEE")
         logger.info("BAD ARGUMENTS")
         logger.info("Unsupported choice for authentication or SSL argument.")
-        exit(1)
+        sys.exit(1)
 
     formatter.sensitive_information = [args.username, args.password]
 
@@ -243,7 +242,7 @@ def main():
         else:
             log_error("UNKNOWN TRANSPORT ERROR")
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         err = e
         log_error("UNKNOWN")
 
@@ -253,7 +252,7 @@ def main():
         kwargs["password"] = "******"
         kwargs["username"] = "******"
         logger.info("Library arguments:" + "\n" + json.dumps(kwargs, indent=4))
-        exit(1)
+        sys.exit(1)
 
     handler.flush()
 
