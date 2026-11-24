@@ -2,4 +2,4 @@
 *                        @greenbone/vulnerability-test-spec-ops
 
 # exceptions
-/.github/                @greenbone/devops @vulnerability-test-spec-ops
+/.github/                @greenbone/devops @greenbone/vulnerability-test-spec-ops
