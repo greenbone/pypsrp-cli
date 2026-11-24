@@ -13,7 +13,7 @@ Pypsrp exposes the [WinRM (Windows Remote Management)](https://learn.microsoft.c
 ### Requirements Dependencies
 
 * Inherited from Pypsrp
-* Python 3.10 and later are supported
+* Python 3.11 and later are supported
 * Forces Kerberos support in its dependency chain
 
 #### Packages
